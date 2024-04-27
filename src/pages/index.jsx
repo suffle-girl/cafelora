@@ -17,6 +17,12 @@ const toggleMenu = () => {
   document.querySelector(".rollout-nav").classList.toggle("nav-closed")
 }
 
+const handleOrderButton = (event)=>{
+  event.preventDefault()
+  const id = event.target.dataset.id
+  console.log(id)
+}
+
 document.querySelector('#root').innerHTML = render(
   <div className="page">
     <Header />
@@ -33,3 +39,8 @@ document.querySelector('#root').innerHTML = render(
 document.querySelector(".nav-btn").addEventListener("click", toggleMenu)
 
 document.querySelector(".rollout-nav").addEventListener("click", toggleMenu)
+
+document.querySelectorAll(".drink__controls").forEach((orderBtn)=>{
+  orderBtn.addEventListener("submit", handleOrderButton)
+})
+
