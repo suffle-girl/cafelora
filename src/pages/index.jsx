@@ -14,11 +14,9 @@ document.querySelector('#root').innerHTML = render(
     <main>
       <Banner />
       <Menu />
-
       <Gallery />
       <Contact />
     </main>
     <Footer />
-
   </div>
 );
