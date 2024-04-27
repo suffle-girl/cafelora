@@ -1,3 +1,5 @@
+import "./Menu.css"
+
 export const Menu = () => (
     <section className="menu">
         <div className="container">
