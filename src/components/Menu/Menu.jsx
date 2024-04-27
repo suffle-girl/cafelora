@@ -9,9 +9,12 @@ export const Menu = ({drinks}) => (
             Vyberte si z našeho interaktivního menu a nemusíte čekat na obsluhu
           </p>
           <div className="drinks-list">
-            <Drink image="/cups/espresso.png" name="Espresso" />
-            <Drink image="/cups/espresso.png" name="Espresso"/>
-            <Drink image="/cups/espresso.png" name="Espresso"/>
+            {drinks.map((item)=>{
+              return(
+                <Drink key={item.id} id={item.id} ordered={item.ordered} layers={item.layers} image={`http://localhost:4000${item.image}`} name={item.name} />
+              )
+            })}
+    
           </div>
           <div className="order-detail">
             <a href="/order.html">Detail objednávky</a>

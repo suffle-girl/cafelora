@@ -10,8 +10,8 @@ import { Footer } from '../components/Footer/Footer';
 
 const response = await fetch("http://localhost:4000/api/drinks")
 const data = await response.json()
-const drink = data.data
-console.log(drink)
+const drinkList = data.data
+console.log(drinkList)
 
 const toggleMenu = () => {
   document.querySelector(".rollout-nav").classList.toggle("nav-closed")
@@ -22,7 +22,7 @@ document.querySelector('#root').innerHTML = render(
     <Header />
     <main>
       <Banner />
-      <Menu />
+      <Menu drinks={drinkList}/>
       <Gallery />
       <Contact />
     </main>
