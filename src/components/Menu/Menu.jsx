@@ -9,9 +9,9 @@ export const Menu = () => (
             Vyberte si z našeho interaktivního menu a nemusíte čekat na obsluhu
           </p>
           <div className="drinks-list">
-            <Drink />
-            <Drink />
-            <Drink />
+            <Drink image="/cups/espresso.png" name="Espresso" />
+            <Drink image="/cups/espresso.png" name="Espresso"/>
+            <Drink image="/cups/espresso.png" name="Espresso"/>
           </div>
           <div className="order-detail">
             <a href="/order.html">Detail objednávky</a>
