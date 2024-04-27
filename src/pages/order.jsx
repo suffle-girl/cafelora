@@ -4,41 +4,17 @@ import './index.css';
 import './order.css'; 
 import { Footer } from '../components/Footer/Footer';
 import { Header } from '../components/Header/Header';
+import { Order } from '../components/Order/Order';
 
+const response = await fetch("http://localhost:4000/api/drinks");
+const data = await response.json();
+const drinkList = data.data;
 
 document.querySelector('#root').innerHTML = render(
   <div className="page">
     <div className="page">
       <Header />
-
-      <main className="order">
-        <div className="order__content container">
-          <h1>Vaše objedávnka</h1>
-          <p className="empty-order empty-order--hide">Zatím nemáte nic objednáno</p>
-          <div className="order__items">
-            <div className="order-item">
-              <img
-                src="/cups/espresso.png" 
-                className="order-item__image"
-              />
-              <div className="order-item__name">
-                Espresso
-              </div>
-            </div>
-
-            <div className="order-item">
-              <img 
-                src="/cups/doppio.png" 
-                className="order-item__image"
-              />
-              <div className="order-item__name">
-                Doppio
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-
+      <Order items={drinkList} />
       <Footer />
     </div>
   </div>
